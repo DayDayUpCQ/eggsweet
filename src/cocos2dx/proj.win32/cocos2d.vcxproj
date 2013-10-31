@@ -41,7 +41,7 @@
     <_ProjectFileVersion>11.0.50727.1</_ProjectFileVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>..\..\build\$(Configuration).win32\</OutDir>
+    <OutDir>..\..\build\$(ProjectName)\$(Configuration).win32\</OutDir>
     <IntDir>$(OutDir)</IntDir>
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
@@ -70,18 +70,18 @@
     <Link>
       <AdditionalDependencies>opengl32.lib;glew32.lib;libxml2.lib;libzlib.lib;libpng.lib;libjpeg.lib;libtiff.lib;libiconv.lib;pthreadVCE2.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>..\..\libs\$(ProjectName).dll</OutputFile>
-      <AdditionalLibraryDirectories>..\..\cocos2dx\platform\third_party\win32\libraries</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\platform\third_party\win32\libraries</AdditionalLibraryDirectories>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <IgnoreSpecificDefaultLibraries>
       </IgnoreSpecificDefaultLibraries>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
-      <ImportLibrary>
-      </ImportLibrary>
+      <ImportLibrary>..\..\libs\$(ProjectName).lib</ImportLibrary>
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
     <PostBuildEvent>
-      <Command />
+      <Command>xcopy   /Y ..\platform\third_party\win32\libraries\*.dll   ..\..\bin
+xcopy   /Y ..\..\libs\*.dll   ..\..\bin</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
