@@ -65,14 +65,14 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>opengl32.lib;glew32.lib;..\..\..\libs\libcocos2d.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>..\..\..\bin\$(ProjectName).exe</OutputFile>
+      <OutputFile>..\..\..\bin\$(ProjectName)\$(ProjectName).exe</OutputFile>
       <AdditionalLibraryDirectories>..\..\..\cocos2dx\platform\third_party\win32\libraries</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
     <PostBuildEvent>
-      <Command />
+      <Command>xcopy   /Y ..\..\..\libs\*.dll   ..\..\..\bin\$(ProjectName)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

@@ -80,7 +80,7 @@
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy   /Y ..\platform\third_party\win32\libraries\*.dll   ..\..\bin
+      <Command>xcopy   /Y ..\platform\third_party\win32\libraries\*.dll   ..\..\libs
 xcopy   /Y ..\..\libs\*.dll   ..\..\bin</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>

@@ -48,7 +48,14 @@ bool HelloWorld::init()
     CCMenu* pMenu = CCMenu::create(pCloseItem, NULL);
     pMenu->setPosition(CCPointZero);
     this->addChild(pMenu, 1);
+    ccColor4B color4B;
+    color4B.r = 255; 
 
+    CCLayerColor *layerColor = CCLayerColor::create(color4B);
+    this->addChild(layerColor, 0);
+
+
+#if 0
     /////////////////////////////
     // 3. add your codes below...
 
@@ -71,7 +78,8 @@ bool HelloWorld::init()
 
     // add the sprite as a child to this layer
     this->addChild(pSprite, 0);
-    
+#endif
+
     // enable standard touch
     this->setTouchEnabled(true);
     
